@@ -3,6 +3,24 @@
 require_once __DIR__ . '/models/products.php';
 require_once __DIR__ . '/models/food.php';
 
+try {
+
+    $category1 = new Category('snake');
+
+} catch (Exception $e) {
+
+    $errors = [
+        'text' => $e->getMessage(),
+        'line' => $e->getLine(),
+        'file' => $e->getFile(),
+        
+    ];
+
+    echo 'Questo file non esiste ' . $e->getFile();
+    var_dump ($errors);
+
+}
+
 ?>
 
 
